@@ -1,0 +1,341 @@
+@import 'includes/env';
+
+.sidebar {
+	position: absolute;
+	left: 100%;
+	top: 0;
+	width: 100%;
+	background-color: transparentize(map-get($color-black, 'default'), .1);
+	overflow-y: scroll;
+	height: 100%;
+	font-family: map-get($font-family, 'roboto'), sans-serif;
+	color: map-get($color-white, 'default');
+	padding: 10px 12px;
+	transition: left .3s ease-in-out;
+
+	&.is-active {
+		left: 0;
+		z-index: map-get($z-index, 'elevated');
+	}
+}
+
+[id='videos-sidebar'] {
+	background-color: transparentize(map-get($color-white, 'default'), .1);
+	
+	.videos {
+		display: flex;
+		flex-wrap: wrap;
+
+		a {
+			color: map-get($color-white, 'default');
+		}
+
+		.overlay {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			width: calc(100% - 20px);
+			height: calc(100% - 20px);
+			opacity: 0;
+			background-color: transparentize(map-get($color-black, 'default'), .6);
+			text-align: right;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: opacity .5s ease-in-out;
+
+			.content {
+				padding: 20px;
+				font-family: map-get($font-family, 'montserrat'), sans-serif;
+				font-size: 30px;
+				text-align: center;
+			}
+
+			.subtitle {
+				font-size: 24px;
+			}
+		}
+
+		.video {
+			position: relative;
+			width: 100%;
+			padding: 10px;
+
+			&:hover .overlay {
+				opacity: 1;
+			}
+
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}
+
+[id='live-sidebar'] {
+	padding: 0 12px;
+
+	.tour {
+		margin: 0 auto;
+
+		.tour__header {
+			color: map-get($color-black, 'default');
+			text-align: center;
+			font-family: map-get($font-family, 'montserrat'), sans-serif;
+
+			td {
+				padding: 0;
+			}
+
+			span {
+				display: block;
+				background-color: map-get($color-white, 'default');
+				margin-bottom: 10px;
+			}
+		}
+
+		.tour__info td {
+			padding: 0 4px 10px;
+		}
+
+		.tour__date {
+			font-weight: map-get($font-weight, 'bold');
+		}
+
+		.tour__venue {
+			.tour__location {
+				font-size: 15px;
+			}
+		}
+
+		.btn-buy {
+			display: table;
+			padding: 1px 5px;
+			font-size: 13px;
+		}
+	}
+}
+
+[id='lyrics-sidebar'] {
+	.lyrics-nav {
+		margin-bottom: 20px;
+	}
+
+	.lyrics-item {
+		line-height: 30px;
+		list-style: none;
+		font-family: map-get($font-family, 'roboto'), sans-serif;
+		color: map-get($color-white, 'default');
+		border-left: 2px solid transparent;
+		padding-left: 15px;
+
+		&.is-active {
+			border-left-color: map-get($color-pink, 'ayvy');
+		}
+
+		&:hover {
+			border-left-color: map-get($color-pink, 'ayvy');
+			border-width: 2px;
+			color: transparentize(map-get($color-white, 'default'), .2);
+			cursor: pointer;
+		}
+	}
+}
+
+[id='lyrics-container'] {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 100%;
+	background-color: transparentize(map-get($color-white, 'default'), .1);
+	font-family: map-get($font-family, 'roboto'), sans-serif;
+	padding: 0 25px;
+	overflow-y: scroll;
+	transition: left .4s ease-in-out;
+
+	&.is-open {
+		z-index: map-get($z-index, 'elevated');
+		left: 0;
+		opacity: 1;
+	}
+
+	.lyrics__lyric {
+		display: none;
+		text-align: center;
+		margin: 0 auto;
+		padding: 50px 0;
+		font-family: map-get($font-family, 'montserrat'), sans-serif;
+
+		&.is-active {
+			display: block;
+		}
+
+		p {
+			margin: 20px 0;
+			line-height: 1.7;
+			text-transform: normal;
+		}
+	}
+
+	.lyrics__title {
+		text-transform: uppercase;
+		margin-bottom: 35px;
+		font-size: 30px;
+	}
+}
+
+[id='about-sidebar'] {
+	p {
+		margin: 20px 0;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.title {
+		margin-top: 15px;
+	}
+}
+
+[id='contact-sidebar'] {
+	input,
+	textarea {
+		display: block;
+		width: 100%;
+		border: 2px solid map-get($color-white, 'default');
+		margin: 12px 0;
+		font-family: map-get($font-family, 'montserrat'), sans-serif;
+		padding: 5px;
+		font-size: 14px;
+	}
+
+	.title {
+		margin-bottom: 20px;
+	}
+
+	input,
+	textarea,
+	button {
+		&:focus {
+			outline: none;
+		}
+	}
+
+	label {
+		display: none;
+	}
+
+	.subtitle {
+		margin-bottom: 15px;
+	}
+
+	.link {
+		color: map-get($color-white, 'default');
+		font-weight: map-get($font-weight, 'bold');
+	}
+}
+
+.sidebar::-webkit-scrollbar,
+[id='lyrics']::-webkit-scrollbar,
+[id='videos-sidebar']::-webkit-scrollbar {
+	display: none;
+}
+
+[id='videos-sidebar'],
+[id='lyrics-container'] {
+	opacity: 0;
+	visibility: hidden;
+	transition: visibility .7s, opacity .5s ease-in-out;
+
+	&.is-active,
+	&.is-open {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+$smallMobile: 480px;
+$tablet: 768px;
+$desktop: 1200px;
+
+@include breakpoint($tablet) {
+	.sidebar {
+		width: 300px;
+		right: -300px;
+		left: auto;
+		transition: right .3s ease-in-out;
+		height: calc(100% - 80px);
+
+		&.is-active {
+			left: auto;
+			right: 0;
+		}
+	}
+
+	[id='videos-sidebar'] {
+		width: 100%;
+		right: auto;
+
+		.videos {
+			.video {
+				width: 50%;
+			}
+		}
+
+		.overlay {
+			.content {
+				font-size: 25px;
+			}
+		}
+	}
+
+	[id="lyrics-sidebar"] {
+		.lyrics-item {
+			line-height: 22px;
+		}
+
+		&.is-active + [id='lyrics-container'] {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	[id="lyrics-container"] {
+		width: calc(100% - 300px);
+		left: auto;
+		padding: 0 100px;
+		height: calc(100% - 80px);
+
+		&.is-active {
+			z-index: map-get($z-index, 'elevated');
+		}
+	}
+
+	[id='videos-sidebar'],
+	[id='lyrics-container'] {
+		opacity: 0;
+		visibility: hidden;
+		transition: visibility .7s, opacity .5s ease-in-out;
+
+		&.is-active,
+		&.is-open {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+@include breakpoint($desktop) {
+	[id='videos-sidebar'] {
+		.videos {
+			.overlay {
+				.content {
+					font-size: 50px;
+				}
+			}
+		}
+	}
+}
