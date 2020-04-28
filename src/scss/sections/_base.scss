@@ -35,6 +35,10 @@ footer {
 	display: none;
 }
 
+p {
+	font-family: map-get($font-family, 'ZCOOL');
+}
+
 header {
 	display: flex;
 	justify-content: space-between;
@@ -43,6 +47,7 @@ header {
 	.logo {
 		img {
 			@include size(50px);
+			vertical-align: middle;
 		}
 	}
 
@@ -69,7 +74,8 @@ header {
 	}
 
 	.nav {
-		font-family: map-get($font-family, 'montserrat'), sans-serif;
+		font-family: map-get($font-family, 'ZCOOL'), sans-serif;
+		letter-spacing: 3px;
 
 		&.is-mobile {
 			position: absolute;
@@ -147,7 +153,8 @@ header {
 	color: map-get($color-white, 'default');
 	text-transform: uppercase;
 	font-size: 14px;
-	font-family: map-get($font-family, 'montserrat'), sans-serif;
+	font-family: map-get($font-family, 'ZCOOL'), sans-serif;
+	letter-spacing: 2px;
 
 	&:hover {
 		cursor: pointer;
@@ -160,13 +167,14 @@ header {
 	text-transform: uppercase;
 	background-color: map-get($color-white, 'default');
 	color: map-get($color-black, 'default');
-	font-family: map-get($font-family, 'montserrat'), sans-serif;
+	font-family: 'electronic-highway';
 	text-align: center;
 	margin: 10px 0;
+	padding-top: 2px;
 }
 
 .title:first-of-type {
-	margin-top: 0;		
+	margin-top: 0;
 }
 
 .social {

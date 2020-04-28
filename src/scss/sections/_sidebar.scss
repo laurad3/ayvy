@@ -8,9 +8,8 @@
 	background-color: transparentize(map-get($color-black, 'default'), .1);
 	overflow-y: scroll;
 	height: 100%;
-	font-family: map-get($font-family, 'roboto'), sans-serif;
 	color: map-get($color-white, 'default');
-	padding: 10px 12px;
+	padding: 10px 12px 30px;
 	transition: left .3s ease-in-out;
 
 	&.is-active {
@@ -46,7 +45,7 @@
 
 			.content {
 				padding: 20px;
-				font-family: map-get($font-family, 'montserrat'), sans-serif;
+				font-family: map-get($font-family, 'ZCOOL'), sans-serif;
 				font-size: 30px;
 				text-align: center;
 			}
@@ -82,7 +81,7 @@
 		.tour__header {
 			color: map-get($color-black, 'default');
 			text-align: center;
-			font-family: map-get($font-family, 'montserrat'), sans-serif;
+			font-family: map-get($font-family, 'ZCOOL'), sans-serif;
 
 			td {
 				padding: 0;
@@ -125,10 +124,11 @@
 	.lyrics-item {
 		line-height: 30px;
 		list-style: none;
-		font-family: map-get($font-family, 'roboto'), sans-serif;
+		font-family: map-get($font-family, 'ZCOOL'), sans-serif;
 		color: map-get($color-white, 'default');
 		border-left: 2px solid transparent;
 		padding-left: 15px;
+		letter-spacing: .5px;
 
 		&.is-active {
 			border-left-color: map-get($color-pink, 'ayvy');
@@ -150,7 +150,6 @@
 	width: 100%;
 	height: 100%;
 	background-color: transparentize(map-get($color-white, 'default'), .1);
-	font-family: map-get($font-family, 'roboto'), sans-serif;
 	padding: 0 25px;
 	overflow-y: scroll;
 	transition: left .4s ease-in-out;
@@ -166,7 +165,7 @@
 		text-align: center;
 		margin: 0 auto;
 		padding: 50px 0;
-		font-family: map-get($font-family, 'montserrat'), sans-serif;
+		font-family: map-get($font-family, 'ZCOOL'), sans-serif;
 
 		&.is-active {
 			display: block;
@@ -176,19 +175,25 @@
 			margin: 20px 0;
 			line-height: 1.7;
 			text-transform: normal;
+			font-size: 20px;
 		}
 	}
 
 	.lyrics__title {
+		background-color: map-get($color-black, 'default');
 		text-transform: uppercase;
 		margin-bottom: 35px;
-		font-size: 30px;
+		font-size: 35px;
+		font-family: 'electronic-highway';
+		color: map-get($color-white, 'default');
+		padding: 8px 0 5px;
 	}
 }
 
 [id='about-sidebar'] {
 	p {
 		margin: 20px 0;
+		letter-spacing: .5px;
 	}
 
 	img {
@@ -207,9 +212,10 @@
 		width: 100%;
 		border: 2px solid map-get($color-white, 'default');
 		margin: 12px 0;
-		font-family: map-get($font-family, 'montserrat'), sans-serif;
+		font-family: map-get($font-family, 'ZCOOL'), sans-serif;
 		padding: 5px;
 		font-size: 14px;
+		letter-spacing: .5px;
 	}
 
 	.title {
@@ -230,6 +236,7 @@
 
 	.subtitle {
 		margin-bottom: 15px;
+		letter-spacing: .5px;
 	}
 
 	.link {

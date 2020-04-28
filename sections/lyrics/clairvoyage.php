@@ -1,4 +1,4 @@
-<div id="deadly" class="lyrics__lyric is-active">
+<div id="deadly" class="lyrics__lyric">
     <h2 class="lyrics__title">Deadly</h2>
     <p>
     Follow me<br>

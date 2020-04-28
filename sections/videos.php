@@ -1,5 +1,31 @@
 <div class="sidebar" id="videos-sidebar">
 	<div class="videos">
+		<div class="video">
+			<img src="frontend/images/video_18.jpg" alt="">
+			<a href="https://youtu.be/9h8Curyb9Lc" target="_blank"><div class="overlay">
+				<div class="content">Silver Sulfur
+					<p class="subtitle">2020</p>
+				</div>
+			</div></a>
+		</div>
+
+		<div class="video">
+			<img src="frontend/images/video_17.jpg" alt="">
+			<a href="https://youtu.be/vXNyRxcYu5I" target="_blank"><div class="overlay">
+				<div class="content">Clairvoyage
+					<p class="subtitle">Live Sessions</p>
+				</div>
+			</div></a>
+		</div>
+
+		<div class="video">
+			<img src="frontend/images/video_16.jpg" alt="">
+			<a href="https://youtu.be/fgMczsCBJOc" target="_blank"><div class="overlay">
+				<div class="content">And Make You Mine
+					<p class="subtitle">2020</p>
+				</div>
+			</div></a>
+		</div>
 
 		<div class="video">
 			<img src="frontend/images/video_15.jpg" alt="">

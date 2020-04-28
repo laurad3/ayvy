@@ -120,10 +120,13 @@ lyricTogglers.forEach(function (toggler) {
 		if (!this.classList.contains(toggle.isActive)) {
 			// hide current
 			const currentLyric = document.querySelector(`.${lyrics.togglers}.${toggle.isActive}`);
-			const currentLyricId = currentLyric.getAttribute('data-toggle');
-			const currentPage = document.getElementById(currentLyricId);
-			currentLyric.classList.remove(toggle.isActive);
-			currentPage.classList.remove(toggle.isActive);
+
+			if (currentLyric) {
+				const currentLyricId = currentLyric.getAttribute('data-toggle');
+				const currentPage = document.getElementById(currentLyricId);
+				currentLyric.classList.remove(toggle.isActive);
+				currentPage.classList.remove(toggle.isActive);
+			}
 
 			// add to selected
 			const selectedLyricId = this.getAttribute('data-toggle');
